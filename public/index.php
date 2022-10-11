@@ -2,7 +2,7 @@
     include './../app/configuracao.php';
     include './../app/Lib/Rota.php';
     include './../app/Lib/Controller.php';
-    include '../app/Controllers/CadastroController.php';
+    //include '../app/Controllers/CadastroController.php';
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@
 <!--  ************************************************* CADASTRO *************************************************  -->
 <!--  ************************************************************************************************************  -->
       
-            <form action="../app/Controllers/CadastroController.php" method="post" class="sign-up-form">
+            <form action="../Controllers/CadastroController.php" method="post" class="sign-up-form">
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h4>SciLink</h4>

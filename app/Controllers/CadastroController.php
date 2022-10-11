@@ -2,8 +2,11 @@
     //include '../Lib/Controller.php';
     //echo "CadastroCOntroller";exit;
     //include "Models/User.php";
-  
-include "../Models/User.php";
+  $a = $_POST['dtn_cientista'];
+  echo "<h1>".$a."</h1>";
+  exit;
+
+include "../../Models/User.php";
 
 class CadastroController
 {

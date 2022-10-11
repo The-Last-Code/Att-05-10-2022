@@ -13,7 +13,6 @@
     define('DATABASENAME','projeto_scilink');
     define('USER','root');
     define('PASSWORD','');
-    define('PORT', '3307');
     class Conn{
         
     }
@@ -23,7 +22,7 @@
         global $msgErro;
         try 
         {
-            $pdo = new PDO('mysql:host='.HOST.';dbname='.DATABASENAME.';port='.PORT,USER,PASSWORD);
+            $pdo = new PDO('mysql:host='.HOST.';dbname='.DATABASENAME,USER,PASSWORD);
             echo ("banco conectado");
         } catch (PDOException $e) 
         {

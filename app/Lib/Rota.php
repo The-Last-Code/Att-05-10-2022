@@ -1,11 +1,13 @@
 <?php
 class Rota{
-    private $controlador    = 'AlunoController';
-    private $metodo         = 'index';
+    private $controlador    = 'CadastroController';
+    //private $metodo         = 'index';
     private $parametros     = [];
-
+    
     public function __construct()
     {
+        echo ('oi');
+        
         $url = $this->url() ? $this->url() : [0];
 
         // post/alunos/2

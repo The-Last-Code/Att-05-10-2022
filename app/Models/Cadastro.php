@@ -1,5 +1,6 @@
 <?php
-   require_once '../app/configuracao.php';
+echo ("Cadastro");
+   require_once '../app/Conn.php';
 
     class Cadastro{
 
@@ -7,7 +8,7 @@
         public $msgErro = "";   
 
         public function __construct(){
-            $con=new Conn();
+            
         }
                                               
         public function setCadastroBanco($nom_cientista, $cpf_cientista, $dtn_cientista, $email_cientista,
@@ -15,7 +16,7 @@
         {
             global $pdo;
             //verificar se já esta cadastrado
-            $sql = $this->con->prepare("SELECT *FROM cientista
+            $sql = $pdo->prepare("SELECT *FROM cientista
                 WHERE cpf_cientista = :b");
                 $sql->bindValue(":b", $cpf_cientista);
                 $sql->execute();
@@ -27,6 +28,7 @@
                 }
                 else
                 {
+                    conectar();
                     //caso não, cadastrar   
                     $sql = $pdo->prepare("INSERT INTO cientista (nom_cientista, cpf_cientista, dtn_cientista, 
                     email_cientista, email_alternativo_cientista, lattes_cientista, snh_cientista) 
@@ -40,7 +42,7 @@
                     $sql->bindValue(":f", $lattes_cientista);
                     $sql->bindValue(":g", $snh_cientista);
                     $sql->execute();
-                    return true;
+                    return 'true';
                 }
         }
 

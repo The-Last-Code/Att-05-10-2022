@@ -1,7 +1,7 @@
 <?php 
-    include './../app/configuracao.php';
+    //include './../app/Conn.php';
     include './../app/Lib/Rota.php';
-    include './../app/Lib/Controller.php';
+    //include './../app/Lib/Controller.php';
     //include '../app/Controllers/CadastroController.php';
 ?>
 
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SciLink - Login</title>
     <link rel="icon" href="./img/logo.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="./public/css/styleLogin.css">
+    <link rel="stylesheet" href="./css/styleLogin.css">
   </head>
   <body>
     <main>
@@ -48,8 +48,8 @@
 
                 <p class="text">
                   Esqueceu sua senha?
-                  <a href="../View/RecuperarSenha.html">Clique aqui!</a>
-                  <?php conectar(); ?>
+                  <a href="../View/RecuperarSenha.html">Clique aqui!</a>       
+                            
                 </p>
               </div>
             </form>
@@ -58,9 +58,10 @@
 <!--  ************************************************************************************************************  -->
 <!--  ************************************************* CADASTRO *************************************************  -->
 <!--  ************************************************************************************************************  -->
-      
-            <form action="../Controllers/CadastroController.php" method="post" class="sign-up-form">
-              <div class="logo">
+
+            <form action="../app/Controllers/CadastroController.php" method="POST" class="sign-up-form">
+     
+            <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h4>SciLink</h4>
               </div>
@@ -115,17 +116,20 @@
                   <input type="password" name="snh_cientista" class="input-field" autocomplete="off" required/>
                   <label>Senha</label>
                 </div>
-
+          
                 <div class="input-wrap1">
                   <input type="password" name="confirmarSenha" class="input-field" autocomplete="off" required/>
                   <label>Confirmar Senha</label>
                 </div>
-
+           
               </div>
+         
               <input type="submit" value="Crie sua Conta" class="sign-btn" />
-
+        
               </div>
+          
             </form>
+          
           </div>
 
           <div class="carousel">
@@ -156,7 +160,8 @@
     </main>
 
     <!-- Javascript file -->
-
+   
     <script src="./script/app.js"></script>
   </body>
+  
 </html>

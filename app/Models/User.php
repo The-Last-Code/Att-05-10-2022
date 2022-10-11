@@ -1,7 +1,7 @@
 <?php
-include("Cadastro.php");
+include 'Cadastro.php';
 
-class CadastraUser extends Cadastro{
+class User extends Cadastro{
 
     private $nom_cientista;
     private $snh_cientista;
@@ -10,6 +10,19 @@ class CadastraUser extends Cadastro{
     private $email_alternativo_cientista;
     private $email_cientista;
     private $dtn_cientista;
+
+    public function __construct($nom_cientista, $cpf_cientista, $dtn_cientista, $email_cientista,
+    $email_alternativo_cientista, $lattes_cientista, $snh_cientista)
+    {
+        $this->nom_cientista = $nom_cientista;
+        $this->cpf_cientista = $cpf_cientista;
+        $this->dtn_cientista = $dtn_cientista;
+        $this->email_cientista = $email_cientista;
+        $this->email_alternativo_cientista = $email_alternativo_cientista;
+        $this->lattes_cientista = $lattes_cientista;
+        $this->snh_cientista = $snh_cientista;
+
+    }
 
     //Metodos Set
     public function setnom_cientista($string){
@@ -59,9 +72,12 @@ class CadastraUser extends Cadastro{
  
 
     public function CadastroBanco(){
-        return $this->setCadastroBanco($this->getnom_cientista(),$this->getcpf_cientista(),$this->getdtn_cientista(),$this->getemail_cientista(),$this->getemail_alternativo_cientista(),$this->getlattes_cientista()
-        ,$this->getsnh_cientista());
-    }
+        $cie = new User( $this->user->getnom_cientista(), $this->user->getcpf_cientista(), 
+        $this->user->getdtn_cientista(), $this->user->getemail_cientista(), $this->user->getemail_alternativo_cientista()
+        ,$this->user->getlattes_cientista(), $this->user->getsnh_cientista());
 
+        return $this->setCadastroBanco($cie->nom_cientista,$cie->cpf_cientista,$cie->dtn_cientista
+        ,$cie->email_cientista,$cie->email_alternativo_cientista,$cie->lattes_cientista,$cie->snh_cientista,);
+    }
 }
 ?>

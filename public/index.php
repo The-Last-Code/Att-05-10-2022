@@ -59,7 +59,7 @@
 <!--  ************************************************* CADASTRO *************************************************  -->
 <!--  ************************************************************************************************************  -->
       
-            <form action="CadastroController.php" method="post" class="sign-up-form">
+            <form action="../app/Controllers/CadastroController.php" method="post" class="sign-up-form">
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h4>SciLink</h4>

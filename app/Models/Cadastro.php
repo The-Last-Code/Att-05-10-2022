@@ -7,7 +7,7 @@
         public $msgErro = "";   
 
         public function __construct(){
-            $this->conectar();
+            $con=new Conn();
         }
                                               
         public function setCadastroBanco($nom_cientista, $cpf_cientista, $dtn_cientista, $email_cientista,
@@ -15,7 +15,7 @@
         {
             global $pdo;
             //verificar se já esta cadastrado
-            $sql = $pdo->prepare("SELECT *FROM cientista
+            $sql = $this->con->prepare("SELECT *FROM cientista
                 WHERE cpf_cientista = :b");
                 $sql->bindValue(":b", $cpf_cientista);
                 $sql->execute();
